@@ -1,4 +1,4 @@
-Blog API (RoR)
+Blog (RoR)
 
 * Ruby version 3.1.2
 
