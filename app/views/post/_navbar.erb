@@ -1,0 +1,15 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark shadow">
+  <div class="container" style="width: auto">
+  <a class="navbar-brand" href="/posts">Ruby Blog</a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <%= link_to "Home", posts_path, class: "nav-item nav-link" + (params[:controller] == 'post' && %w(index show).include?(params[:action]) ? " active" : "") %>
+      <%= link_to "Create", posts_create_path, class: "nav-item nav-link" + (current_page?(controller: 'post', action: 'create') ? " active" : "") %>
+      <a class="nav-item nav-link disabled" href="#">Delete all</a>
+    </div>
+  </div>
+</nav>

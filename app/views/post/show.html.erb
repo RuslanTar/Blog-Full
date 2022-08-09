@@ -1,0 +1,15 @@
+<div class="container text-center p-3">
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <%= link_to "Edit", { controller: "post", action: "edit_page" }, class: "btn btn-secondary", style: "margin-right:-5px;", type: "button"%>
+    <input type="hidden" class="btn"><!-- fake sibling to right -->
+  </div>
+
+    <%= form_with model: @posts, method: :delete, class: "btn-group" do |form| %>
+      <i></i><!-- fake sibling to left -->
+      <%= form.button "Delete", class: "btn btn-danger" %>
+    <% end %>
+    <%#= button_to "Delete", @posts, method: "delete", class: "btn btn-danger", type: "button" %>
+
+</div>
+
+<%= render "post/post", full: true, post: @post %>

@@ -1,0 +1,13 @@
+<div class="card bg-light p-2 h-100 shadow" style="transform: rotate(0);">
+  <div class="card-body" style="padding-bottom: 2.5em">
+      <% if local_assigns[:full] %>
+        <h3 class="card-title text-center"><%= post.title %></h3>
+        <p class="card-text"><%= simple_format post.body %></p>
+      <% else %>
+        <h5 class="card-title text-center"><%= truncate post.title %></h5>
+        <p class="card-text text-break"><%= truncate post.body, length: 200, separator: /\s/ %></p>
+        <%= link_to "Show more", { controller: "post", action: "show", id: post.id }, class: "position-absolute start-50 translate-middle-x btn btn-primary", style: "bottom: 10px" %>
+      <% end %>
+  </div>
+
+</div>

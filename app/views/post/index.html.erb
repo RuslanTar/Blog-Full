@@ -1,0 +1,13 @@
+<div class="container d-grid gap-3">
+  <div class="row row-cols-3">
+  <% @posts.in_groups_of(3, false).each do |group| %>
+
+      <% group.each do |post| %>
+        <div class="col mt-5">
+          <%= render partial: "post/post", object: post, class: "text-reset" %>
+        </div>
+      <% end %>
+
+  <% end %>
+  </div>
+</div>
